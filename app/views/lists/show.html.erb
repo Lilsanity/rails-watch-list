@@ -1,0 +1,10 @@
+<h1><%= @list.name %></h1>
+<ul>
+ <% @list.bookmarks.each do |bookmark| %>
+  <li>Title : <%= bookmark.movie.title %></li>
+  <li>Overview : <%= bookmark.movie.overview %></li>
+  <li>Rating : <%= bookmark.movie.rating %>/10</li>
+  <li>Comments : <%= bookmark.comment %></li>
+  <%= link_to "Supprimer", list_path(@list), data: { turbo_method: :delete } %>
+ <% end %>
+</ul>
